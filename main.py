@@ -149,19 +149,7 @@ def main():
             st.session_state.chat_active = True
             st.rerun()
 
-    # Prompt choice box
-    st.markdown("**Quick Prompts**")
-    prompt = st.selectbox("Try a sample sentence:", [
-        "Select a prompt...",
-        "I go to school yesterday.",
-        "She don't like coffee.",
-        "How to improve my English?",
-        "Hello, how you are?"
-    ], key="prompt_select")
-    if prompt != "Select a prompt..." and st.button("Use This Prompt"):
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        st.session_state.chat_active = True
-        st.rerun()
+
 
     # Chat interface
     for idx, message in enumerate(st.session_state.messages):
